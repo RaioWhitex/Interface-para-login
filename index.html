@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Radios ocultos controlam qual tela está ativa -->
+  <input type="radio" name="auth" id="show-login"  hidden checked/>
+  <input type="radio" name="auth" id="show-signup" hidden/>
+
+  <div class="card">
+
+    <!-- ── LOGIN ── -->
+    <div class="form-panel login-panel">
+      <h2 class="form-title">Login</h2>
+
+      <input type="email"    class="field" placeholder="Enter your email"/>
+      <input type="password" class="field" placeholder="Enter your password"/>
+
+      <label for="show-signup" class="forgot">Forgot password?</label>
+
+      <button class="btn">Login</button>
+
+      <p class="switch-text">
+        Don't have an account?
+        <label for="show-signup" class="switch-link">Signup</label>
+      </p>
+    </div>
+
+    <!-- ── SIGNUP ── -->
+    <div class="form-panel signup-panel">
+      <h2 class="form-title">Signup</h2>
+
+      <input type="email"    class="field" placeholder="Enter your email"/>
+      <input type="password" class="field" placeholder="Create a password"/>
+      <input type="password" class="field" placeholder="Confirm your password"/>
+
+      <button class="btn">Signup</button>
+
+      <p class="switch-text">
+        Already have an account?
+        <label for="show-login" class="switch-link">Login</label>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

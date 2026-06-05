@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2e9e7e;
+  padding: 24px;
+}
+
+/* ── CARD ── */
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #2e9e7e;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+/* ── PAINÉIS ── */
+
+.form-panel {
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  /* Por padrão, ambos os painéis existem mas só um é visível */
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Painel de login visível por padrão */
+#show-login:checked ~ .card .login-panel {
+  opacity: 1;
+  pointer-events: all;
+  position: relative; /* ocupa espaço para dar altura ao card */
+}
+
+/* Painel de signup visível quando selecionado */
+#show-signup:checked ~ .card .signup-panel {
+  opacity: 1;
+  pointer-events: all;
+  position: relative;
+}
+
+/* Garante que o painel inativo não ocupe espaço */
+#show-login:checked  ~ .card .signup-panel { position: absolute; }
+#show-signup:checked ~ .card .login-panel  { position: absolute; }
+
+/* ── TÍTULO ── */
+
+.form-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* ── CAMPOS ── */
+
+.field {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field::placeholder {
+  color: #bbb;
+}
+
+.field:focus {
+  border-color: #2e9e7e;
+}
+
+/* ── FORGOT PASSWORD ── */
+
+.forgot {
+  font-size: 13px;
+  color: #2e9e7e;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+
+.forgot:hover {
+  opacity: 0.75;
+}
+
+/* ── BOTÃO ── */
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: #2e9e7e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 4px;
+}
+
+.btn:hover {
+  background: #247a62;
+  transform: translateY(-1px);
+}
+
+/* ── TEXTO DE TROCA ── */
+
+.switch-text {
+  font-size: 13px;
+  color: #777;
+  text-align: center;
+}
+
+.switch-link {
+  color: #2e9e7e;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.switch-link:hover {
+  opacity: 0.75;
+}
